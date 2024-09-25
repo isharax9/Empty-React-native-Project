@@ -4,7 +4,7 @@ import React from "react";
 export default App = () => {
   return (
     <View>
-      <Text>Hello World</Text>
+      <Text style = {{color:"blue"}}>Hello World</Text>
     </View>
   );
 };
