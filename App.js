@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center', // Centers all items horizontally
-    backgroundColor: '#f0f0f0', // Background color for the entire screen
+    backgroundColor: '#f0f0f0',
+    justifyContent:'center' // Background color for the entire screen
   },
   helloContainer: {
     borderWidth: 2,
