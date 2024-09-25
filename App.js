@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center', // Centers all items horizontally
     backgroundColor: '#f0f0f0',
-    justifyContent:'center' // Background color for the entire screen
+    justifyContent:'center', // Background color for the entire screen
+    paddingHorizontal: 20,
   },
   helloContainer: {
     borderWidth: 2,
@@ -45,25 +46,25 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   largeRectangle: {
-    width: '80%',
-    height: 80,
+    width: '100%',
+    height: 100,
     backgroundColor: 'lightcoral',
     marginVertical: 10,
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '80%',
+    width: '100%',
     marginVertical: 10,
   },
   smallBox: {
-    width: 80,
+    width: 90,
     height: 80,
-    marginHorizontal: 5,
+    columnGap: 10,
   },
   largeRectangleGreen: {
-    width: '80%',
-    height: 80,
+    width: '100%',
+    height: 100,
     backgroundColor: 'lightgreen',
     marginVertical: 10,
   },
