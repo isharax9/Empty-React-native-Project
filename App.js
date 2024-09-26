@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useFonts } from 'expo-font';
-import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native';
+import { View, Text, TextInput, StyleSheet, Pressable, Image } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+
 
 SplashScreen.preventAutoHideAsync();
 
@@ -26,36 +28,25 @@ export default function LoginScreen() {
 
   return (
     <View style={styles.container}>
+      <Image source={require('./assets/logo.png')} style={styles.logo} />
       <Text style={styles.title}>Sign In</Text>
-      <Text style={styles.welcomeText}>Hello! Welcome to Smart Trade</Text>
-
+      <Text style={styles.welcomeText}>Hello! Welcome to MacNa Mobile eShop </Text>
       <TextInput
-        style={[
-          styles.input,
-          focusedInput === 'mobile' && styles.inputFocused,
-        ]}
+        style={[styles.input, focusedInput === 'mobile' && styles.inputFocused]}
         placeholder="Mobile"
         keyboardType="numeric"
         onFocus={() => setFocusedInput('mobile')}
         onBlur={() => setFocusedInput(null)}
       />
-
       <TextInput
-        style={[
-          styles.input,
-          focusedInput === 'password' && styles.inputFocused,
-        ]}
+        style={[styles.input, focusedInput === 'password' && styles.inputFocused]}
         placeholder="Password"
         secureTextEntry={true}
         onFocus={() => setFocusedInput('password')}
         onBlur={() => setFocusedInput(null)}
       />
-
-      <Pressable style={styles.buttonContainer} onPress={
-        () => {
-          console.log("Button pressed");
-        }
-        }>
+      <Pressable style={styles.buttonContainer} onPress={() => { console.log("Button pressed"); }}>
+        <FontAwesome name="arrow-right" size={18} color="#25292e" />
         <Text style={styles.buttontext}>SIGN IN</Text>
       </Pressable>
     </View>
@@ -69,16 +60,26 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: '#fff',
   },
+  logo: {
+    width: '100%',
+    height: undefined,
+    aspectRatio: 2, // Adjust the aspect ratio to match your image's aspect ratio
+    alignSelf: 'center',
+    marginBottom: 20,
+    resizeMode: 'contain', // Ensures the image is resized without cropping
+  },
   title: {
     fontSize: 30,
     marginBottom: 10,
     color: 'blue',
     fontFamily: 'PressStart2P-Regular',
+    textAlign: 'center',
   },
   welcomeText: {
     fontSize: 16,
     marginBottom: 20,
     fontFamily: 'SourceCodePro-VariableFont_wght',
+    textAlign: 'center',
   },
   input: {
     fontSize: 16,
@@ -102,6 +103,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'row',
+    columnGap: 10,
   },
   buttontext: {
     fontSize: 18,
