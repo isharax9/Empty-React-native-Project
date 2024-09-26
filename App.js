@@ -1,45 +1,37 @@
-import React from 'react';
-import { View, StyleSheet, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 
-const App = () => {
-  const createTwoButtonAlert = () =>
-    Alert.alert('Alert Title', 'My Alert Msg', [
-      {
-        text: 'Cancel',
-        onPress: () => console.log('Cancel Pressed'),
-        style: 'cancel',
-      },
-      { text: 'OK', onPress: () => console.log('OK Pressed') },
-    ]);
+var name = "None";
 
-  const createThreeButtonAlert = () =>
-    Alert.alert('Alert Title', 'My Alert Msg', [
-      {
-        text: 'Ask me later',
-        onPress: () => console.log('Ask me later pressed'),
-      },
-      {
-        text: 'Cancel',
-        onPress: () => console.log('Cancel Pressed'),
-        style: 'cancel',
-      },
-      { text: 'OK', onPress: () => console.log('OK Pressed') },
-    ]);
 
+export default function App() {
   return (
-    <View style={styles.container}>
-      <Button title={'2-Button Alert'} onPress={createTwoButtonAlert} />
-      <Button title={'3-Button Alert'} onPress={createThreeButtonAlert} />
+    <View style={stylesheet.view1}>
+      <Text style={stylesheet.text1}>Hello World</Text>
+      <Button
+        title="Press Me"
+        onPress={() => {
+          name = "Ishara";
+          console.log(name);
+          Alert.alert("Hello " + name,"How are you?");
+        }}
+      />
     </View>
   );
-};
+}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center',
+
+
+const stylesheet = StyleSheet.create({
+  text1: {
+    fontSize: 20,
+    color: "red",
+    fontWeight: "bold",
   },
-});
 
-export default App;
+  view1: {
+    backgroundColor: "#fff",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  }
+});
