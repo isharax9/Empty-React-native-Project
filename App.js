@@ -1,26 +1,32 @@
-import { StyleSheet, View, Text, Button } from "react-native";
-import { Component1 } from "./components/Component1";
+import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 
 export default function App() {
   return (
     <View style={stylesheet.view1}>
-
-      <Component1 />
-      <Component1 />
-      <Component1 />
-      <Component1 />
-
+      <Text style={stylesheet.text1}>Hello World</Text>
+      <Button
+        title="Press Me"
+        onPress={() => {
+          console.log("Hello World");
+          Alert.alert("Alert Title","Hello Ishara , How are you?");
+        }}
+      />
     </View>
   );
 }
 
+
 const stylesheet = StyleSheet.create({
-  view1: {
-    flex: 1,
-    backgroundColor: "white",
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 10,
-    rowGap: 10,
+  text1: {
+    fontSize: 20,
+    color: "red",
+    fontWeight: "bold",
   },
+
+  view1: {
+    backgroundColor: "#fff",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  }
 });
