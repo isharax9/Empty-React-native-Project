@@ -5,8 +5,8 @@ import { Component1 } from "./components/Component1";
 export default function App() {
   return (
     <View style={stylesheet.view1}>
-      <Component1 fname={"First Name"} lname={"Last Name"} />
-      <Component1 fname={"Gayan"} lname={"Danushka"} />
+      <Component1 fname={"First Name"} lname={"Last Name"} display={true} />
+      <Component1 fname={"Gayan"} lname={"Danushka"} display={false} />
     </View>
   );
 }
