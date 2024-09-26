@@ -5,7 +5,7 @@ import { Component1 } from "./components/Component1";
 export default function App() {
   return (
     <View style={stylesheet.view1}>
-      <Component1 fname={"Sahan"} lname={"Perera"} />
+      <Component1 fname={"First Name"} lname={"Last Name"} />
       <Component1 fname={"Gayan"} lname={"Danushka"} />
     </View>
   );
