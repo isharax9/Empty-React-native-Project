@@ -1,22 +1,18 @@
-// components/Component1.js
-import React from 'react';
-import { useState } from 'react';   
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { useState } from "react";
 
-export function Component1({ fname, lname }) {
-    const [getName, setName] = useState({ fname, lname });
+import { Button, StyleSheet, View, Text } from "react-native";
 
-    const handlePress = () => {
-        setName({ fname: 'Ishara', lname: 'Lakshitha' });
-    };
+export function Component1(props) {
+    const [getName, setName] = useState(props.fname + " " + props.lname);
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.text}>{`${getName.fname} ${getName.lname}`}</Text>
-            <Button title="Change" onPress={handlePress} />
+        <View style={StyleSheet.view1}>
+            <Text style={StyleSheet.text1}>{getName}</Text>
+            <Button title="Change" onPress={() => { setName("Ishara lakshitha"); }} />
         </View>
     );
 }
+
 
 const styles = StyleSheet.create({
     container: {
