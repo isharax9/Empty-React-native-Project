@@ -1,17 +1,34 @@
-import { StyleSheet, View, Text, Button } from "react-native";
+// components/Component1.js
+import React from 'react';
+import { View, Text, Button, Alert, StyleSheet } from 'react-native';
 
-export function Component1() {
+export const Component1 = () => {
+    const [name, setName] = React.useState('Name');
+
+    const handlePress = () => {
+        setName('Ishara');
+    };
+
     return (
-        <View>
-            <Text style={stylesheet.text1}>Text 1</Text>
-            <Button title="Button 1" />
+        <View style={styles.container}>
+            <Text style={styles.text}>{name}</Text>
+            <Button title="Change" onPress={handlePress} />
         </View>
     );
-}
+};
 
-const stylesheet = StyleSheet.create({
-    text1: {
-        fontSize: 16,
-        color: "red",
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        columnGap: 10, // Add columnGap to the View component   
+        
+    },
+    text: {
+        marginRight: 0, // Add margin to the right of the Text component
+        fontSize: 18,
+        fontWeight: 'bold',
+        fontFamily: 'monospace',
     },
 });
