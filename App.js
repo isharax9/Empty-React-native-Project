@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useFonts } from 'expo-font';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 
 SplashScreen.preventAutoHideAsync();
@@ -51,13 +51,13 @@ export default function LoginScreen() {
         onBlur={() => setFocusedInput(null)}
       />
 
-      <View style={styles.buttonContainer}>
-        <Button
-          title="SIGN IN"
-          onPress={() => { }}
-          color="#007bff"
-        />
-      </View>
+      <Pressable style={styles.buttonContainer} onPress={
+        () => {
+          console.log("Button pressed");
+        }
+        }>
+        <Text style={styles.buttontext}>SIGN IN</Text>
+      </Pressable>
     </View>
   );
 }
@@ -96,7 +96,16 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 20,
+    height: 40,
     backgroundColor: '#007bff',
+    color: '#fff',
     borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
+  buttontext: {
+    fontSize: 18,
+    color: '#fff',
+    fontFamily: 'SourceCodePro-Bold',
+  }
 });
